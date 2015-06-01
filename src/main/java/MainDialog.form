@@ -164,7 +164,7 @@
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Скорость движения крышки, [м]"/>
+                          <text value="Скорость движения крышки, [м/c]"/>
                         </properties>
                       </component>
                       <component id="741a1" class="javax.swing.JTextArea" binding="TextArea8">
@@ -177,7 +177,7 @@
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Температура крышки, [Т]"/>
+                          <text value="Температура крышки, [°C]"/>
                         </properties>
                       </component>
                     </children>
@@ -260,7 +260,7 @@
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Температура&#10;плавления [C]"/>
+                          <text value="Температура&#10;плавления [°C]"/>
                         </properties>
                       </component>
                       <component id="7ffc9" class="javax.swing.JTextArea" binding="TextArea5">
@@ -273,7 +273,7 @@
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Удельная &#10;теплоемкость&#10;[Дж/(кг*С)]&#10;"/>
+                          <text value="Удельная &#10;теплоемкость&#10;[Дж/(кг*°С)]&#10;"/>
                         </properties>
                       </component>
                       <component id="9cf38" class="javax.swing.JTextArea" binding="TextArea4">
@@ -354,13 +354,13 @@
                         <constraints>
                           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="200" height="30"/>
-                            <maximum-size width="300" height="50"/>
+                            <maximum-size width="350" height="50"/>
                           </grid>
                         </constraints>
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Коэффициэнт теплоотдачи от крышки &#10;канала к жидкости, [Вт*м^2*С]"/>
+                          <text value="Коэффициэнт теплоотдачи от крышки &#10;канала к жидкости, [Вт/(м^2*°С)]"/>
                         </properties>
                       </component>
                       <component id="104f5" class="javax.swing.JFormattedTextField" binding="fieldN" custom-create="true">
@@ -406,7 +406,7 @@
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Температурный коэффициэнт вязкости, [1/С]"/>
+                          <text value="Температурный коэффициэнт вязкости, [1/°С]"/>
                         </properties>
                       </component>
                       <component id="8021d" class="javax.swing.JTextArea" binding="TextArea12">
@@ -419,7 +419,7 @@
                         <properties>
                           <background color="-1118482"/>
                           <editable value="false"/>
-                          <text value="Температура приведения, [С]"/>
+                          <text value="Температура приведения, [°С]"/>
                         </properties>
                       </component>
                       <component id="29f9" class="javax.swing.JTextArea" binding="TextArea13">
@@ -447,17 +447,6 @@
                       <text value="Расчет"/>
                     </properties>
                   </component>
-                  <component id="400c3" class="javax.swing.JComboBox" binding="comboBox1" custom-create="true" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="180" height="25"/>
-                        <maximum-size width="180" height="25"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <model/>
-                    </properties>
-                  </component>
                   <component id="87367" class="javax.swing.JTextArea" binding="TextArea15">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
@@ -469,6 +458,19 @@
                       <background color="-1118482"/>
                       <editable value="false"/>
                       <text value="Выберете материал"/>
+                    </properties>
+                  </component>
+                  <component id="400c3" class="javax.swing.JComboBox" binding="comboBox1" custom-create="true">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="180" height="25"/>
+                        <maximum-size width="180" height="25"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <editable value="false"/>
+                      <enabled value="true"/>
+                      <model/>
                     </properties>
                   </component>
                 </children>

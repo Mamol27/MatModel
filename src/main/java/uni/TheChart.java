@@ -29,6 +29,8 @@ public class TheChart extends JPanel implements PlotterInterface {
     Vector<Double> T = new Vector<>();
     Vector<Double> H = new Vector<>();
     JTable table;
+    Font font;
+
 
 
     public TheChart() {
@@ -37,6 +39,8 @@ public class TheChart extends JPanel implements PlotterInterface {
         initFrame();
 
         createChart();
+
+        createTable();
     }
 
     /**
@@ -87,22 +91,29 @@ public class TheChart extends JPanel implements PlotterInterface {
         add(chartPanel);
 
 
+
+
+    }
+
+    private void createTable() {
         DefaultTableModel defaultTableModel = new DefaultTableModel();
-        defaultTableModel.addColumn("Слой", L);
+
+        defaultTableModel.addColumn("Длина", L);
         defaultTableModel.addColumn("Вязкость", H);
         defaultTableModel.addColumn("Температура", T);
+
         table = new JTable(defaultTableModel);
         table.setRowHeight(table.getRowHeight() + 4);
         table.setAutoCreateRowSorter(true);
         JScrollPane scrollPane = new JScrollPane(table);
+        font = new Font("Serif", Font.PLAIN, 18);
         this.add(scrollPane, FlowLayout.LEFT);
-
     }
 
     @Override
     public void updateTable() {
         DefaultTableModel defaultTableModel = new DefaultTableModel();
-        defaultTableModel.addColumn("Слой", L);
+        defaultTableModel.addColumn("Длина", L);
         defaultTableModel.addColumn("Вязкость", H);
         defaultTableModel.addColumn("Температура", T);
 //        defaultTableModel.

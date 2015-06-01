@@ -47,47 +47,17 @@ public class MainDialog extends JDialog {
     private JTextArea TextArea12;
     private JTextArea TextArea13;
     private JButton calculateButton;
-    private JComboBox comboBox1;
+    private JComboBox<Object> comboBox1;
     private JTextArea TextArea15;
     private JPanel tabPanel;
     private TheChart theChart;
     private Calculation calc;
 
 
-    int box_id;
-
-
     public MainDialog() {
         setContentPane(contentPane);
         setModal(true);
-//        getRootPane().setDefaultButton(buttonOK);
 
-//        buttonOK.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                onOK();
-//            }
-//        });
-//
-//        buttonCancel.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                onCancel();
-//            }
-//        });
-
-//// call onCancel() when cross is clicked
-//        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-//        addWindowListener(new WindowAdapter() {
-//            public void windowClosing(WindowEvent e) {
-//                onCancel();
-//            }
-//        });
-
-//// call onCancel() on ESCAPE
-//        contentPane.registerKeyboardAction(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                onCancel();
-//            }
-//        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -109,15 +79,7 @@ public class MainDialog extends JDialog {
         });
     }
 
-//    private void onOK() {
-//// add your code here
-//        dispose();
-//    }
-//
-//    private void onCancel() {
-//// add your code here if necessary
-//        dispose();
-//    }
+
 
     public static void main(String[] args) {
         MainDialog dialog = new MainDialog();
@@ -132,7 +94,7 @@ public class MainDialog extends JDialog {
             EcotmmDaoImpl ecotmmDao = new EcotmmDaoImpl();
 
             JComboBox box = (JComboBox) e.getSource();
-            int box_id = (int) theTable.defaultTableModel.getValueAt(comboBox1.getSelectedIndex(), 0);
+            int box_id = (int) theTable.defaultTableModel.getValueAt(box.getSelectedIndex(), 0);
             Vector<Object> materials = materialDao.get(box_id);
             Vector<Object> ecotmm = ecotmmDao.get(box_id);
             calc = new Calculation(materials.get(2), materials.get(3), materials.get(4),
@@ -148,7 +110,7 @@ public class MainDialog extends JDialog {
         }
     };
 
-    private void editCombobox() throws SQLException {
+    private void editComboBox() throws SQLException {
         MaterialDaoImpl materialDao = new MaterialDaoImpl();
         EcotmmDaoImpl ecotmmDao = new EcotmmDaoImpl();
 
@@ -156,8 +118,9 @@ public class MainDialog extends JDialog {
 
         comboBox1 = new JComboBox<Object>(items);
         comboBox1.setSelectedIndex(0);
-        comboBox1.addActionListener(actionListener);
         comboBox1.setMaximumRowCount(5);
+        comboBox1.addActionListener(actionListener);
+
 
         int box_id = (int) theTable.defaultTableModel.getValueAt(comboBox1.getSelectedIndex(), 0);
         Vector<Object> materials = materialDao.get(box_id);
@@ -211,20 +174,7 @@ public class MainDialog extends JDialog {
         fieldTu.setValue(210.0);
         fieldDeltaL.setValue(0.1);
 
-        editCombobox();
-
-
-//        MaterialDao materialDao = new MaterialDaoImpl();
-//        List<Material> materials = materialDao.get();
-
-//        comboBox1 = new JComboBox(materials.toArray());
-//        comboBox1 = new JComboBox(comboBoxArray);
-//        comboBox1.setModel(new DefaultComboBoxModel(comboBoxArray));
-//        JComboBox comboBox1 = new JComboBox();
-
-//        comboBox1.setModel(materials.toArray());
-
-
+        editComboBox();
         // TODO: place custom component creation code here
     }
 

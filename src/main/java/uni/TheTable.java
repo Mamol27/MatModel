@@ -30,10 +30,6 @@ public class TheTable extends JPanel {
     public Object[] columns;
 
 
-    public TheTable(DefaultTableModel defaultTableModel, Object[] columns) {
-    }
-
-
     private class ListenForAction implements ActionListener { // Слушаем кнопки
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == addMaterial) { // Если тыкнули в "Добвать материал"
@@ -48,15 +44,16 @@ public class TheTable extends JPanel {
                         Double.parseDouble(tfB.getText()), Double.parseDouble(tfTr.getText()), Double.parseDouble(tfN.getText()),
                         Double.parseDouble(tfAlfau.getText())); //Модель строки для Эмпирических коэффициентов материалов
                 ecotmmDao.insert(ecotmm); //Так как таблица Эмпирических коффициэнтов вторичная нам понадобился номер строки, в которую добавили материалы
-
+                createTable();
+                table.setModel(defaultTableModel);
 
             } else if (e.getSource() == removeMaterial) {
                 try { // Если тыкнули в "Удалить материал"
-                    int rowCount = table.getSelectedRow();
-                    int selectedRow = (int) table.getValueAt(table.getSelectedRow(), 0);
-                    EcotmmDaoImpl.delete(selectedRow); // Сначала удаляем строку из вторичной таблицы
-                    MaterialDaoImpl.delete(selectedRow);
-
+                    int idSelectedRow = (int) table.getValueAt(table.getSelectedRow(), 0);
+                    EcotmmDaoImpl.delete(idSelectedRow); // Сначала удаляем строку из вторичной таблицы
+                    MaterialDaoImpl.delete(idSelectedRow);
+                    defaultTableModel.removeRow(table.getSelectedRow());
+                    table.setModel(defaultTableModel);
                 } catch (ArrayIndexOutOfBoundsException e1) {
                     System.out.println(e1.getMessage());
                     errorMessage.setText("Для удаления выдели строку");
@@ -142,8 +139,8 @@ public class TheTable extends JPanel {
 
     public TheTable() throws SQLException {
         super();
-//        table = new JTable(dbc.defaultTableModel);
         createTable();
+        table = new JTable(defaultTableModel);
         font = new Font("Serif", Font.PLAIN, 18);
 
         table.setFont(font);
@@ -269,8 +266,6 @@ public class TheTable extends JPanel {
             materials.get(i).addAll(ecotmm.get(i));
         }
         defaultTableModel.setDataVector(materials, columns2);
-
-        table = new JTable(defaultTableModel);
 
     }
 
