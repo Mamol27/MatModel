@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainDialog">
-  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="10" left="10" bottom="10" right="10"/>
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="48" y="54" width="1248" height="700"/>
     </constraints>
     <properties>
       <minimumSize width="900" height="700"/>
       <opaque value="true"/>
-      <preferredSize width="1250" height="550"/>
+      <preferredSize width="1200" height="550"/>
       <requestFocusEnabled value="true"/>
     </properties>
     <border type="none"/>
@@ -16,14 +16,18 @@
       <grid id="e3588" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="1200" height="-1"/>
+          </grid>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
           <tabbedpane id="66f33" binding="tabs">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="800" height="-1"/>
+              </grid>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -224,7 +228,7 @@
                       <size top="0" left="1" bottom="1" right="1"/>
                     </border>
                     <children>
-                      <component id="e5ca4" class="javax.swing.JFormattedTextField" binding="fieldC">
+                      <component id="e5ca4" class="javax.swing.JFormattedTextField" binding="fieldC" custom-create="true">
                         <constraints>
                           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -235,7 +239,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="281e6" class="javax.swing.JFormattedTextField" binding="fieldT0">
+                      <component id="281e6" class="javax.swing.JFormattedTextField" binding="fieldT0" custom-create="true">
                         <constraints>
                           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -286,7 +290,7 @@
                           <text value="Плотность [кг/м3]"/>
                         </properties>
                       </component>
-                      <component id="50827" class="javax.swing.JFormattedTextField" binding="fieldRo">
+                      <component id="50827" class="javax.swing.JFormattedTextField" binding="fieldRo" custom-create="true">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -311,7 +315,7 @@
                     <properties/>
                     <border type="etched" title="Эмперические коэффициэнты" title-justification="2" title-position="2"/>
                     <children>
-                      <component id="d0c14" class="javax.swing.JFormattedTextField" binding="fieldMu0">
+                      <component id="d0c14" class="javax.swing.JFormattedTextField" binding="fieldMu0" custom-create="true">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -322,7 +326,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="e7a91" class="javax.swing.JFormattedTextField" binding="fieldAlfau">
+                      <component id="e7a91" class="javax.swing.JFormattedTextField" binding="fieldAlfau" custom-create="true">
                         <constraints>
                           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -359,7 +363,7 @@
                           <text value="Коэффициэнт теплоотдачи от крышки &#10;канала к жидкости, [Вт*м^2*С]"/>
                         </properties>
                       </component>
-                      <component id="104f5" class="javax.swing.JFormattedTextField" binding="fieldN">
+                      <component id="104f5" class="javax.swing.JFormattedTextField" binding="fieldN" custom-create="true">
                         <constraints>
                           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -370,7 +374,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="6b107" class="javax.swing.JFormattedTextField" binding="fieldTr">
+                      <component id="6b107" class="javax.swing.JFormattedTextField" binding="fieldTr" custom-create="true">
                         <constraints>
                           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -381,7 +385,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="c0b1" class="javax.swing.JFormattedTextField" binding="fieldB">
+                      <component id="c0b1" class="javax.swing.JFormattedTextField" binding="fieldB" custom-create="true">
                         <constraints>
                           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="80" height="-1"/>
@@ -433,7 +437,7 @@
                       </component>
                     </children>
                   </grid>
-                  <component id="9009f" class="javax.swing.JButton" binding="CalculateButton">
+                  <component id="9009f" class="javax.swing.JButton" binding="calculateButton">
                     <constraints>
                       <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <maximum-size width="180" height="36"/>
@@ -479,10 +483,13 @@
                 <children>
                   <hspacer id="68582">
                     <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="1200" height="-1"/>
+                        <maximum-size width="1200" height="-1"/>
+                      </grid>
                     </constraints>
                   </hspacer>
-                  <component id="96316" class="TheTable" binding="theTable" custom-create="true">
+                  <component id="96316" class="uni.TheTable" binding="theTable" custom-create="true">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -497,7 +504,14 @@
                 </constraints>
                 <properties/>
                 <border type="none"/>
-                <children/>
+                <children>
+                  <component id="39bff" class="uni.TheChart" binding="theChart">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                  </component>
+                </children>
               </grid>
             </children>
           </tabbedpane>
