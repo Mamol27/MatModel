@@ -7,9 +7,9 @@ import java.util.Vector;
  */
 public class Calculation {
 
-    private double H = 0.05;                    //глубина канала, м;
-    private double W = 0.27;                    //ширина канала, м;
-    private double L = 10.6;                    //длина канала, м;
+    private double H;                    //глубина канала, м;
+    private double W;                    //ширина канала, м;
+    private double L;                    //длина канала, м;
 
     private double Ro;                                  //плотность материала, кг/м³;
     private double C;                                   //средняя удельная теплоемкость материала, Дж/(кг∙ºС);
@@ -21,13 +21,12 @@ public class Calculation {
     private double T0;                                  //температура плавления материала, ºС;
 
 
-    private double Vu = 1.5;                            //скорость движения крышки канала, м/с; вводимый параметр
-    private double Tu = 210;                            //температура крышки канала, ºС;  вводимый параметр
+    private double Vu;                                  //скорость движения крышки канала, м/с; вводимый параметр
+    private double Tu;                                  //температура крышки канала, ºС;  вводимый параметр
     private double Q;                                   //производительность канала, кг/с;
     private double F = 0;                               //поправочный коэффициент
-    private double alfa = 1;                            //
-    private Vector<Double> T = new Vector<>();         //Температура материала в каждом слое
-    private Vector<Double> h = new Vector<>();         //Вязкость в каждом слое
+    private Vector<Double> T = new Vector<>();          //Температура материала в каждом слое
+    private Vector<Double> h = new Vector<>();          //Вязкость в каждом слое
     private Vector<Double> layer = new Vector<>();
     private double deltaL = 0.1;                        //Шаг
 
@@ -54,24 +53,20 @@ public class Calculation {
         gamma = Vu / H;
         Q = W * Vu * H * F;
         qgamma = W * H * mu0 * Math.pow(gamma, n + 1);
-        qalfa = W * (alfa / b - alfa * Tu + alfa * Tr);
-        double m = L / deltaL;
+        qalfa = W * (alfau / b - alfau * Tu + alfau * Tr);
+        double m = L / deltaL + 1;
         int i = 0;
 
         while (i <= m) {
             double l = i * deltaL;
-            ae = ((b * qgamma + W * alfa) / b * qalfa) * (1 - Math.exp((-b * qalfa * l) / (Ro * C * Q))) + Math.exp(b * (T0 - Tr - (qalfa * l) / (Ro * C * Q)));
-            T.add(Tr + (1 / b) * Math.log10(ae));
+            ae = ((b * qgamma + W * alfau) / (b * qalfa)) * (1 - Math.exp((-b * qalfa * l) / (Ro * C * Q))) + Math.exp(b * (T0 - Tr - (qalfa * l) / (Ro * C * Q)));
+            T.add(Tr + (1 / b) * Math.log(ae));
             h.add(mu0 * Math.exp(-b * (T.get(i) - Tr)) * Math.pow(gamma, n - 1));
             layer.add(l);
             i++;
         }
 
-//        for (int j = 0; j < T.size(); j++) {
-//            System.out.print("Температура в " + j + " серчении = " + T.get(j));
-//            System.out.print("  Вязкость в " + j + " серчении = " + h.get(j));
-//            System.out.println();
-//        }
+
         double g = Q * Ro * 3600;
 //        System.out.println("Производительность= " + G);
     }

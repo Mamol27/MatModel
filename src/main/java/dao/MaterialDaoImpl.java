@@ -99,12 +99,12 @@ public class MaterialDaoImpl implements MaterialDao {
         return material.getId();
     }
 
-    public Vector<Object> getColumn() throws SQLException {
+    public Vector<String> getColumn() throws SQLException {
         Connection connection = DbConnection.createConnection();
         String sql = "SELECT material_id, type, density, ash, melting_point, description  FROM materials;";
         Statement st = connection.createStatement();
         ResultSet resultSet = st.executeQuery(sql);
-        Vector<Object> mat = new Vector<>();
+        Vector<String> mat = new Vector<>();
         while (resultSet.next()) {
             mat.add(resultSet.getString("type"));
         }

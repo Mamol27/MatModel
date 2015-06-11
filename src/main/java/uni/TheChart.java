@@ -11,64 +11,96 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
 import java.util.Vector;
 
 // used sources: http://www.java2s.com/Code/Java/Chart/JFreeChartLineChartDemo1.htm
 public class TheChart extends JPanel implements PlotterInterface {
-    private XYPlot plot = null;
+    private XYPlot plot = null, plot2 = null;
     private XYSeries series1 = null;
     private XYSeries series2 = null;
-    private XYSeriesCollection xyDataset = null;
-    private JFreeChart chart = null;
-    private ChartPanel chartPanel = null;
+    private XYSeriesCollection xyDataset1 = null, xyDataset2 = null;
+    private ChartPanel chartPanel = null, chartPanel2 = null;
     private NumberAxis rangeAxis = null;
     private XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-    Vector<Double> L = new Vector<>();
-    Vector<Double> T = new Vector<>();
-    Vector<Double> H = new Vector<>();
-    JTable table;
-    Font font;
+    private Vector<Double> L = new Vector<>();
+    private Vector<Double> T = new Vector<>();
+    private Vector<Double> H = new Vector<>();
+    JTable table = new JTable();
+    JPanel panelOfCharts = new JPanel();
+    public String namefile;
+    private ExtractExcel extractExcel;
+
 
 
 
     public TheChart() {
 
-        // initialise the mainwindow
+        JButton saveReport = new JButton("Сохранить отчет");
+//        saveReport.setMaximumSize(new Dimension(250,50));
+
+        saveReport.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("*.xls", "*.*");
+                JFileChooser fileopen = new JFileChooser();
+                fileopen.setFileFilter(filter);
+                if (fileopen.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    namefile = fileopen.getSelectedFile().getAbsolutePath();
+                    try {
+
+                        if (!namefile.endsWith(".xls")) {
+                            namefile += ".xls";
+                        }
+                        extractExcel.setNameFile(namefile);
+                        extractExcel.setTable(table);
+                        extractExcel.createReport();
+                        JOptionPane.showMessageDialog(null, "Успешно");
+                    } catch (IOException e1) {
+                        System.out.println("Беда!");
+
+                    }
+                }
+            }
+        });
+
         initFrame();
-
-        createChart();
-
         createTable();
+        createChart1();
+        createChart2();
+        add(panelOfCharts);
+        add(saveReport);
+
+
     }
 
-    /**
-     * Init the mainwindow
-     */
     private void initFrame() {
-        setBackground(Color.WHITE);
-        setSize(640, 480);
+        this.setLayout(new GridLayout(2, 3));
     }
 
-    /**
-     * Creates a chart and a plotpanel and add it to the mainwindow.
-     */
-    private void createChart() {
+    private void createChart1() {
 
-        xyDataset = createDataset("");
-        setBackground(Color.getColor("EEEEEE"));
+        xyDataset1 = createDataset1("");
 
-        // create the chart...
-        chart = ChartFactory.createXYLineChart(
-                "",                        // chart title	"Line Chart Demo 6"
-                "Длина",                    // x axis label
-                "",                         // y axis label
-                xyDataset,                  // data
+        JFreeChart chart = ChartFactory.createXYLineChart(
+                "Зависимость температуры от длины",                         // chart title	"Line Chart Demo 6"
+                "Длина, [м]",               // x axis label
+                "Температура, [°С]",        // y axis label
+                xyDataset1,                  // data
                 PlotOrientation.VERTICAL,
-                true,                        // include legend
-                true,                        // tooltips
-                false                        // urls
+                false,                       // include legend
+                true,                       // tooltips
+                false                       // urls
         );
 
         // get a reference to the plot for further customisation...
@@ -76,9 +108,10 @@ public class TheChart extends JPanel implements PlotterInterface {
         plot.setBackgroundPaint(Color.white);
         plot.setDomainGridlinePaint(Color.lightGray);
         plot.setRangeGridlinePaint(Color.lightGray);
+        plot.setWeight(500);
 
         renderer.setSeriesShapesVisible(0, false);    // a thin line will be painted for series1
-        renderer.setSeriesShapesVisible(1, false);    // points will be painted for series2
+//        renderer.setSeriesShapesVisible(1, false);    // points will be painted for series2
 
         plot.setRenderer(renderer);
 
@@ -86,73 +119,123 @@ public class TheChart extends JPanel implements PlotterInterface {
         rangeAxis = (NumberAxis) plot.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
         // OPTIONAL CUSTOMISATION COMPLETED.
+        JPanel p = new JPanel();
 
         chartPanel = new ChartPanel(chart);
-        add(chartPanel);
+        chartPanel.setPreferredSize(new Dimension(600, 300));
+        panelOfCharts.setLayout(new GridLayout(2, 1));
+        panelOfCharts.add(chartPanel);
+    }
+
+    private void createChart2() {
+        xyDataset2 = createDataset2("");
+
+        // create the chart...
+        JFreeChart chart2 = ChartFactory.createXYLineChart(
+                "Зависимость вязкости от длины",                         // chart title	"Line Chart Demo 6"
+                "Длина, [м]",               // x axis label
+                "Вязкость, [Па*с]",         // y axis label
+                xyDataset2,                  // data
+                PlotOrientation.VERTICAL,
+                false,                       // include legend
+                true,                       // tooltips
+                false                       // urls
+        );
+
+        // get a reference to the plot for further customisation...
+        plot2 = chart2.getXYPlot();
+        plot2.setBackgroundPaint(Color.white);
+        plot2.setDomainGridlinePaint(Color.lightGray);
+        plot2.setRangeGridlinePaint(Color.lightGray);
 
 
+//        renderer.setSeriesShapesVisible(0, false);    // a thin line will be painted for series1
+        renderer.setSeriesShapesVisible(1, false);    // points will be painted for series2
 
+        plot2.setRenderer(renderer);
 
+        // change the auto tick unit selection to integer units only...
+        rangeAxis = (NumberAxis) plot2.getRangeAxis();
+        rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+        // OPTIONAL CUSTOMISATION COMPLETED.
+
+        chartPanel2 = new ChartPanel(chart2);
+        chartPanel2.setPreferredSize(new Dimension(600, 300));
+        panelOfCharts.add(chartPanel2);
     }
 
     private void createTable() {
         DefaultTableModel defaultTableModel = new DefaultTableModel();
 
-        defaultTableModel.addColumn("Длина", L);
-        defaultTableModel.addColumn("Вязкость", H);
-        defaultTableModel.addColumn("Температура", T);
+        defaultTableModel.addColumn("Длина, м", L);
+        defaultTableModel.addColumn("Вязкость Па*с", H);
+        defaultTableModel.addColumn("Температура, °С", T);
 
         table = new JTable(defaultTableModel);
         table.setRowHeight(table.getRowHeight() + 4);
         table.setAutoCreateRowSorter(true);
         JScrollPane scrollPane = new JScrollPane(table);
-        font = new Font("Serif", Font.PLAIN, 18);
-        this.add(scrollPane, FlowLayout.LEFT);
+//        font = new Font("Serif", Font.PLAIN, 18);
+        add(scrollPane);
     }
 
     @Override
     public void updateTable() {
         DefaultTableModel defaultTableModel = new DefaultTableModel();
-        defaultTableModel.addColumn("Длина", L);
-        defaultTableModel.addColumn("Вязкость", H);
-        defaultTableModel.addColumn("Температура", T);
-//        defaultTableModel.
+        defaultTableModel.addColumn("Длина, [м]", L);
+        defaultTableModel.addColumn("Вязкость, [Па*с]", H);
+        defaultTableModel.addColumn("Температура, [°С]", T);
         table.setModel(defaultTableModel);
-//        table.
+
 
         L.clear();
         H.clear();
         T.clear();
     }
 
-    /**
-     * Creates the dataset.
-     *
-     * @return a sample dataset.
-     */
-    private XYSeriesCollection createDataset(String legendTxt) {
+    private XYSeriesCollection createDataset1(String legendTxt) {
 
-        series1 = new XYSeries("Вязкость");
-        series2 = new XYSeries("Температура");
+        series1 = new XYSeries("Вязкость, [Па*с]");
 
-        final XYSeriesCollection dataset = new XYSeriesCollection();
+        final XYSeriesCollection dataset1 = new XYSeriesCollection();
 
-        dataset.addSeries(series1);
-        dataset.addSeries(series2);
+        dataset1.addSeries(series1);
 
-        return dataset;
+        return dataset1;
     }
 
+    private XYSeriesCollection createDataset2(String legendTxt) {
+
+        series2 = new XYSeries("Вязкость, [Па*с]");
+
+        final XYSeriesCollection dataset2 = new XYSeriesCollection();
+
+        dataset2.addSeries(series2);
+
+        return dataset2;
+    }
 
     @Override
-    public void updateData(Vector<Double> x, Vector<Double> y, Vector<Double> marksX, Vector<Double> marksY) {
+    public void updateData(Vector<Double> x, Vector<Double> y, Vector<Double> marksX, Vector<Double> marksY) throws ParseException {
 
-        L = x;
-        H = y;
-        T = marksY;
+        DecimalFormat df = new DecimalFormat("#.###");
+        df.setRoundingMode(RoundingMode.HALF_DOWN);
 
-        XYSeries series1 = new XYSeries("Вязкость");
-        XYSeries series2 = new XYSeries("Температура");
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.getDefault());
+        NumberFormat nf = NumberFormat.getInstance();
+
+        for (int i = 0; i < x.size(); i++) {
+            L.add(nf.parse(df.format(x.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
+            H.add(nf.parse(df.format(y.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
+            T.add(nf.parse(df.format(marksY.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
+        }
+
+//        L = x;
+//        H = y;
+//        T = marksY;
+
+        XYSeries series1 = new XYSeries("Вязкость, [Па*с]");
+        XYSeries series2 = new XYSeries("Температура, [°С]");
 
         if (x.size() == y.size())
             for (int i = 0; i < x.size(); i++)
@@ -173,34 +256,25 @@ public class TheChart extends JPanel implements PlotterInterface {
         updateDataset(series1, series2);
     }
 
-    /**
-     * add the new series to the dataset
-     *
-     * @param series1
-     * @param series2
-     */
     private void updateDataset(XYSeries series1, XYSeries series2) {
 
         // Remove all dataset
-        xyDataset.removeAllSeries();
+        xyDataset1.removeAllSeries();
+        xyDataset2.removeAllSeries();
 
         // dereferencing the serieses
         this.series1 = null;
         this.series2 = null;
 
         // adding the new serieses to dataset
-        xyDataset.addSeries(series1);
-        xyDataset.addSeries(series2);
+        xyDataset1.addSeries(series1);
+        xyDataset2.addSeries(series2);
 
         // referencing the serieses
         this.series1 = series1;
         this.series2 = series2;
     }
 
-
-    /**
-     * Clear the series from the linechart
-     */
     @Override
     public void clearFunction() {
 
@@ -208,11 +282,16 @@ public class TheChart extends JPanel implements PlotterInterface {
         series2.clear();
     }
 
-
     public ChartPanel getChartPanel() {
 
         return chartPanel;
     }
 
+    public JTable getTable() {
+        return table;
+    }
 
+    public void setExtractExcel(ExtractExcel extractExcel) {
+        this.extractExcel = extractExcel;
+    }
 }
