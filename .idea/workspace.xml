@@ -1,34 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15459b98-b110-4d84-9cf6-8daf1bcdd4ef" name="Default" comment="Fuck combobox">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uni/MainDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_12.xml" />
-      <change type="DELETED" beforePath="D:\Yadisk\Java\MatModel\src\main\java\MainDialog.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/Calculation.java" afterPath="$PROJECT_DIR$/src/main/java/uni/Calculation.java" />
+    <list default="true" id="15459b98-b110-4d84-9cf6-8daf1bcdd4ef" name="Default" comment="||">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/DbConnection.java" afterPath="$PROJECT_DIR$/src/main/java/uni/DbConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Ecotmm.java" afterPath="$PROJECT_DIR$/src/main/java/model/Ecotmm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/EcotmmDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/EcotmmDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/EcotmmDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/dao/EcotmmDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MatModel.iml" afterPath="$PROJECT_DIR$/MatModel.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Material.java" afterPath="$PROJECT_DIR$/src/main/java/model/Material.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/MaterialDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/MaterialDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/MaterialDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/dao/MaterialDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jfree_jcommon_1_0_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jfree_jcommon_1_0_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jfree_jfreechart_1_0_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jfree_jfreechart_1_0_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_1_901_1_jdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_1_901_1_jdbc4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/PlotterInterface.java" afterPath="$PROJECT_DIR$/src/main/java/uni/PlotterInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java" afterPath="$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/MainDialog.java" afterPath="$PROJECT_DIR$/src/main/java/uni/MainDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/TheChart.java" afterPath="$PROJECT_DIR$/src/main/java/uni/TheChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uni/TheTable.java" afterPath="$PROJECT_DIR$/src/main/java/uni/TheTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Yadisk\Java\MatModel\src\main\java\MainDialog.form" afterPath="$PROJECT_DIR$/src/main/java/uni/MainDialog.form" />
     </list>
     <list id="05af44f2-fbbc-499d-b230-9cdc0323c6a7" name="Failed commit: Default" comment="ll" />
     <ignored path="MatModel.iws" />
@@ -63,15 +42,36 @@
       <file leaf-file-name="MainDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uni/MainDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1466" max-vertical-offset="3145">
-              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1591" max-vertical-offset="2278">
+              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="class#1968:2861" expanded="false" />
                 <element signature="method#main#0;class#MainDialog#0" expanded="false" />
-                <element signature="method#focusLost#0;class#ListenForFocus#0;class#MainDialog#0" expanded="false" />
-                <element signature="method#createUIComponents#0;class#MainDialog#0" expanded="false" />
+                <element signature="method#fillComboBox#0;class#MainDialog#0" expanded="false" />
+                <element signature="method#setFormatField#0;class#MainDialog#0" expanded="false" />
                 <element signature="method#setToExtractExcel#0;class#MainDialog#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="646">
+              <caret line="26" column="19" selection-start-line="10" selection-start-column="4" selection-end-line="26" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uni/DbConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1292">
+              <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,8 +79,8 @@
       <file leaf-file-name="Calculation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uni/Calculation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58219177" vertical-offset="510" max-vertical-offset="1989">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.72773975" vertical-offset="969" max-vertical-offset="1989">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,71 +89,11 @@
       <file leaf-file-name="ExtractExcel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3172" max-vertical-offset="3536">
-              <caret line="260" column="44" selection-start-line="260" selection-start-column="44" selection-end-line="260" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="2040">
+              <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
               <folding>
-                <element signature="e#3792#3793#0" expanded="false" />
-                <element signature="e#3832#3833#0" expanded="false" />
-                <element signature="e#3882#3883#0" expanded="false" />
-                <element signature="e#3919#3920#0" expanded="false" />
-                <element signature="e#3969#3970#0" expanded="false" />
-                <element signature="e#4006#4007#0" expanded="false" />
-                <element signature="e#4056#4057#0" expanded="false" />
-                <element signature="e#4093#4094#0" expanded="false" />
-                <element signature="e#4145#4146#0" expanded="false" />
-                <element signature="e#4184#4185#0" expanded="false" />
-                <element signature="e#4236#4237#0" expanded="false" />
-                <element signature="e#4275#4276#0" expanded="false" />
-                <element signature="e#4335#4336#0" expanded="false" />
-                <element signature="e#4382#4383#0" expanded="false" />
-                <element signature="e#4434#4435#0" expanded="false" />
-                <element signature="e#4473#4474#0" expanded="false" />
-                <element signature="e#4523#4524#0" expanded="false" />
-                <element signature="e#4560#4561#0" expanded="false" />
-                <element signature="e#4612#4613#0" expanded="false" />
-                <element signature="e#4651#4652#0" expanded="false" />
-                <element signature="e#4705#4706#0" expanded="false" />
-                <element signature="e#4746#4747#0" expanded="false" />
-                <element signature="e#4796#4797#0" expanded="false" />
-                <element signature="e#4833#4834#0" expanded="false" />
-                <element signature="e#4885#4886#0" expanded="false" />
-                <element signature="e#4924#4925#0" expanded="false" />
-                <element signature="e#4974#4975#0" expanded="false" />
-                <element signature="e#5011#5012#0" expanded="false" />
-                <element signature="e#5069#5070#0" expanded="false" />
-                <element signature="e#5114#5115#0" expanded="false" />
-                <element signature="e#5158#5159#0" expanded="false" />
-                <element signature="e#5189#5190#0" expanded="false" />
-                <element signature="e#5233#5234#0" expanded="false" />
-                <element signature="e#5264#5265#0" expanded="false" />
-                <element signature="e#5308#5309#0" expanded="false" />
-                <element signature="e#5339#5340#0" expanded="false" />
-                <element signature="e#5385#5386#0" expanded="false" />
-                <element signature="e#5418#5419#0" expanded="false" />
-                <element signature="e#5464#5465#0" expanded="false" />
-                <element signature="e#5497#5498#0" expanded="false" />
-                <element signature="e#5551#5552#0" expanded="false" />
-                <element signature="e#5592#5593#0" expanded="false" />
-                <element signature="e#5638#5639#0" expanded="false" />
-                <element signature="e#5671#5672#0" expanded="false" />
-                <element signature="e#5715#5716#0" expanded="false" />
-                <element signature="e#5746#5747#0" expanded="false" />
-                <element signature="e#5792#5793#0" expanded="false" />
-                <element signature="e#5825#5826#0" expanded="false" />
-                <element signature="e#5873#5874#0" expanded="false" />
-                <element signature="e#5908#5909#0" expanded="false" />
-                <element signature="e#5952#5953#0" expanded="false" />
-                <element signature="e#5983#5984#0" expanded="false" />
-                <element signature="e#6029#6030#0" expanded="false" />
-                <element signature="e#6062#6063#0" expanded="false" />
-                <element signature="e#6106#6107#0" expanded="false" />
-                <element signature="e#6137#6138#0" expanded="false" />
-                <element signature="e#6189#6190#0" expanded="false" />
-                <element signature="e#6228#6229#0" expanded="false" />
-                <element signature="e#6270#6271#0" expanded="false" />
-                <element signature="e#6304#6305#0" expanded="false" />
-                <element signature="e#6352#6353#0" expanded="false" />
-                <element signature="e#6392#6393#0" expanded="false" />
+                <element signature="method#createReport#0;class#ExtractExcel#0" expanded="false" />
+                <element signature="method#insertPicture#0;class#ExtractExcel#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -169,39 +109,31 @@
       <file leaf-file-name="TheChart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uni/TheChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2885" max-vertical-offset="3961">
-              <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1915" max-vertical-offset="2533">
+              <caret line="315" column="27" selection-start-line="315" selection-start-column="27" selection-end-line="315" selection-end-column="27" />
               <folding>
-                <element signature="e#3018#3019#0" expanded="false" />
-                <element signature="e#3069#3070#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#createChart1#0;class#TheChart#0" expanded="false" />
+                <element signature="method#createChart2#0;class#TheChart#0" expanded="false" />
                 <element signature="method#createTable#0;class#TheChart#0" expanded="false" />
                 <element signature="method#updateTable#0;class#TheChart#0" expanded="false" />
                 <element signature="method#createDataset1#0;class#TheChart#0" expanded="false" />
                 <element signature="method#createDataset2#0;class#TheChart#0" expanded="false" />
+                <element signature="method#updateData#0;class#TheChart#0" expanded="false" />
                 <element signature="method#updateDataset#0;class#TheChart#0" expanded="false" />
                 <element signature="method#clearFunction#0;class#TheChart#0" expanded="false" />
                 <element signature="method#getChartPanel#0;class#TheChart#0" expanded="false" />
-                <element signature="e#10251#10252#0" expanded="false" />
-                <element signature="e#10279#10280#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TheTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uni/TheTable.java">
+      <file leaf-file-name="EcotmmDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/EcotmmDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="663">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="class#ListenForAction#0;class#TheTable#0" expanded="false" />
-                <element signature="class#ListenForMouse#0;class#TheTable#0" expanded="false" />
-                <element signature="class#ListenForFocus#0;class#TheTable#0" expanded="false" />
-                <element signature="method#TheTable#0;class#TheTable#0" expanded="false" />
-                <element signature="method#setColumnWidths#0;class#TheTable#0" expanded="false" />
-                <element signature="method#createTable#0;class#TheTable#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="2346">
+              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,9 +141,11 @@
       <file leaf-file-name="Material.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Material.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="1054">
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1020">
               <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
+                <element signature="e#807#808#0" expanded="false" />
+                <element signature="e#832#833#0" expanded="false" />
                 <element signature="e#865#866#0" expanded="false" />
                 <element signature="e#893#894#0" expanded="false" />
                 <element signature="e#924#925#0" expanded="false" />
@@ -280,18 +214,18 @@
         <option value="$PROJECT_DIR$/src/main/java/TheTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/TheChart.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/EcotmmDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uni/DbConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/uni/PlotterInterface.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/dao/MaterialDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainDialog.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainDialog.form" />
         <option value="$PROJECT_DIR$/src/main/java/uni/Calculation.java" />
         <option value="$PROJECT_DIR$/src/main/java/uni/TheTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/uni/ExtractExel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uni/MainDialog.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/uni/DbConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/uni/TheChart.java" />
         <option value="$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uni/MainDialog.java" />
       </list>
     </option>
   </component>
@@ -363,7 +297,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -436,9 +369,62 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MatModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MatModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MatModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MatModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,6 +449,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
+    <property name="LayoutCode.rearrangeEntriesXML" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -697,7 +684,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433152487322</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="||">
+      <created>1433998587069</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1433998587069</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -707,12 +700,14 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2990196" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3980424" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3398693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23146747" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -720,14 +715,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41830066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2990196" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3398693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33221477" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41830066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -773,7 +766,8 @@
     </option>
     <MESSAGE value="ll" />
     <MESSAGE value="Fuck combobox" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fuck combobox" />
+    <MESSAGE value="||" />
+    <option name="LAST_COMMIT_MESSAGE" value="||" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -796,15 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1241">
           <caret line="239" column="63" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="class#ListenForAction#0;class#TheTable#0" expanded="false" />
-            <element signature="class#ListenForMouse#0;class#TheTable#0" expanded="false" />
-            <element signature="class#ListenForFocus#0;class#TheTable#0" expanded="false" />
-            <element signature="method#TheTable#0;class#TheTable#0" expanded="false" />
-            <element signature="method#setColumnWidths#0;class#TheTable#0" expanded="false" />
-            <element signature="method#createTable#0;class#TheTable#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1026,13 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/EcotmmDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="1632">
-          <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uni/PlotterInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
@@ -1040,26 +1018,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="646">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uni/DbConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_31/src.zip!/javax/swing/JFormattedTextField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="9519" max-vertical-offset="19125">
           <caret line="612" column="0" selection-start-line="612" selection-start-column="0" selection-end-line="612" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1089,12 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13495" max-vertical-offset="38828">
           <caret line="872" column="48" selection-start-line="872" selection-start-column="34" selection-end-line="872" selection-end-column="48" />
-          <folding>
-            <element signature="e#28239#28240#0" expanded="false" />
-            <element signature="e#28301#28302#0" expanded="false" />
-            <element signature="e#29415#29416#0" expanded="false" />
-            <element signature="e#29471#29472#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1116,15 +1072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="663">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="class#ListenForAction#0;class#TheTable#0" expanded="false" />
-            <element signature="class#ListenForMouse#0;class#TheTable#0" expanded="false" />
-            <element signature="class#ListenForFocus#0;class#TheTable#0" expanded="false" />
-            <element signature="method#TheTable#0;class#TheTable#0" expanded="false" />
-            <element signature="method#setColumnWidths#0;class#TheTable#0" expanded="false" />
-            <element signature="method#createTable#0;class#TheTable#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,6 +1093,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1054">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
+            <element signature="e#807#808#0" expanded="false" />
+            <element signature="e#832#833#0" expanded="false" />
             <element signature="e#865#866#0" expanded="false" />
             <element signature="e#893#894#0" expanded="false" />
             <element signature="e#924#925#0" expanded="false" />
@@ -1172,93 +1121,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uni/TheChart.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uni/MainDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2885" max-vertical-offset="3961">
-          <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1591" max-vertical-offset="2278">
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
           <folding>
-            <element signature="e#3018#3019#0" expanded="false" />
-            <element signature="e#3069#3070#0" expanded="false" />
-            <element signature="method#createTable#0;class#TheChart#0" expanded="false" />
-            <element signature="method#updateTable#0;class#TheChart#0" expanded="false" />
-            <element signature="method#createDataset1#0;class#TheChart#0" expanded="false" />
-            <element signature="method#createDataset2#0;class#TheChart#0" expanded="false" />
-            <element signature="method#updateDataset#0;class#TheChart#0" expanded="false" />
-            <element signature="method#clearFunction#0;class#TheChart#0" expanded="false" />
-            <element signature="method#getChartPanel#0;class#TheChart#0" expanded="false" />
-            <element signature="e#10251#10252#0" expanded="false" />
-            <element signature="e#10279#10280#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="class#1968:2861" expanded="false" />
+            <element signature="method#main#0;class#MainDialog#0" expanded="false" />
+            <element signature="method#fillComboBox#0;class#MainDialog#0" expanded="false" />
+            <element signature="method#setFormatField#0;class#MainDialog#0" expanded="false" />
+            <element signature="method#setToExtractExcel#0;class#MainDialog#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3172" max-vertical-offset="3536">
-          <caret line="260" column="44" selection-start-line="260" selection-start-column="44" selection-end-line="260" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+          <caret line="26" column="19" selection-start-line="10" selection-start-column="4" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uni/DbConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1292">
+          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/EcotmmDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="2346">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uni/TheChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1915" max-vertical-offset="2533">
+          <caret line="315" column="27" selection-start-line="315" selection-start-column="27" selection-end-line="315" selection-end-column="27" />
           <folding>
-            <element signature="e#3792#3793#0" expanded="false" />
-            <element signature="e#3832#3833#0" expanded="false" />
-            <element signature="e#3882#3883#0" expanded="false" />
-            <element signature="e#3919#3920#0" expanded="false" />
-            <element signature="e#3969#3970#0" expanded="false" />
-            <element signature="e#4006#4007#0" expanded="false" />
-            <element signature="e#4056#4057#0" expanded="false" />
-            <element signature="e#4093#4094#0" expanded="false" />
-            <element signature="e#4145#4146#0" expanded="false" />
-            <element signature="e#4184#4185#0" expanded="false" />
-            <element signature="e#4236#4237#0" expanded="false" />
-            <element signature="e#4275#4276#0" expanded="false" />
-            <element signature="e#4335#4336#0" expanded="false" />
-            <element signature="e#4382#4383#0" expanded="false" />
-            <element signature="e#4434#4435#0" expanded="false" />
-            <element signature="e#4473#4474#0" expanded="false" />
-            <element signature="e#4523#4524#0" expanded="false" />
-            <element signature="e#4560#4561#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#4651#4652#0" expanded="false" />
-            <element signature="e#4705#4706#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="false" />
-            <element signature="e#4833#4834#0" expanded="false" />
-            <element signature="e#4885#4886#0" expanded="false" />
-            <element signature="e#4924#4925#0" expanded="false" />
-            <element signature="e#4974#4975#0" expanded="false" />
-            <element signature="e#5011#5012#0" expanded="false" />
-            <element signature="e#5069#5070#0" expanded="false" />
-            <element signature="e#5114#5115#0" expanded="false" />
-            <element signature="e#5158#5159#0" expanded="false" />
-            <element signature="e#5189#5190#0" expanded="false" />
-            <element signature="e#5233#5234#0" expanded="false" />
-            <element signature="e#5264#5265#0" expanded="false" />
-            <element signature="e#5308#5309#0" expanded="false" />
-            <element signature="e#5339#5340#0" expanded="false" />
-            <element signature="e#5385#5386#0" expanded="false" />
-            <element signature="e#5418#5419#0" expanded="false" />
-            <element signature="e#5464#5465#0" expanded="false" />
-            <element signature="e#5497#5498#0" expanded="false" />
-            <element signature="e#5551#5552#0" expanded="false" />
-            <element signature="e#5592#5593#0" expanded="false" />
-            <element signature="e#5638#5639#0" expanded="false" />
-            <element signature="e#5671#5672#0" expanded="false" />
-            <element signature="e#5715#5716#0" expanded="false" />
-            <element signature="e#5746#5747#0" expanded="false" />
-            <element signature="e#5792#5793#0" expanded="false" />
-            <element signature="e#5825#5826#0" expanded="false" />
-            <element signature="e#5873#5874#0" expanded="false" />
-            <element signature="e#5908#5909#0" expanded="false" />
-            <element signature="e#5952#5953#0" expanded="false" />
-            <element signature="e#5983#5984#0" expanded="false" />
-            <element signature="e#6029#6030#0" expanded="false" />
-            <element signature="e#6062#6063#0" expanded="false" />
-            <element signature="e#6106#6107#0" expanded="false" />
-            <element signature="e#6137#6138#0" expanded="false" />
-            <element signature="e#6189#6190#0" expanded="false" />
-            <element signature="e#6228#6229#0" expanded="false" />
-            <element signature="e#6270#6271#0" expanded="false" />
-            <element signature="e#6304#6305#0" expanded="false" />
-            <element signature="e#6352#6353#0" expanded="false" />
-            <element signature="e#6392#6393#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#createChart1#0;class#TheChart#0" expanded="false" />
+            <element signature="method#createChart2#0;class#TheChart#0" expanded="false" />
+            <element signature="method#createTable#0;class#TheChart#0" expanded="false" />
+            <element signature="method#updateTable#0;class#TheChart#0" expanded="false" />
+            <element signature="method#createDataset1#0;class#TheChart#0" expanded="false" />
+            <element signature="method#createDataset2#0;class#TheChart#0" expanded="false" />
+            <element signature="method#updateData#0;class#TheChart#0" expanded="false" />
+            <element signature="method#updateDataset#0;class#TheChart#0" expanded="false" />
+            <element signature="method#clearFunction#0;class#TheChart#0" expanded="false" />
+            <element signature="method#getChartPanel#0;class#TheChart#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1268,24 +1185,21 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uni/MainDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uni/ExtractExcel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1466" max-vertical-offset="3145">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="2040">
+          <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MainDialog#0" expanded="false" />
-            <element signature="method#focusLost#0;class#ListenForFocus#0;class#MainDialog#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#MainDialog#0" expanded="false" />
-            <element signature="method#setToExtractExcel#0;class#MainDialog#0" expanded="false" />
+            <element signature="method#createReport#0;class#ExtractExcel#0" expanded="false" />
+            <element signature="method#insertPicture#0;class#ExtractExcel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uni/Calculation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58219177" vertical-offset="510" max-vertical-offset="1989">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.72773975" vertical-offset="969" max-vertical-offset="1989">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>

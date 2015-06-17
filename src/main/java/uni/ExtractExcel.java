@@ -3,11 +3,14 @@ package uni;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.util.IOUtils;
 
 import javax.swing.*;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by Илья on 08.06.2015.
@@ -49,13 +52,16 @@ public class ExtractExcel {
 
     JTable table;
 
+    HSSFWorkbook wb;
+    HSSFSheet sheet;
+
 
     public void createReport() throws IOException {
 
 
-        HSSFWorkbook wb = new HSSFWorkbook();
+        wb = new HSSFWorkbook();
         FileOutputStream fileOut = new FileOutputStream(nameFile);
-        HSSFSheet sheet = wb.createSheet("Sheet1");
+        sheet = wb.createSheet("Sheet1");
         HSSFRow row = sheet.createRow((short) 0);
         Cell cell;
 
@@ -132,9 +138,39 @@ public class ExtractExcel {
         cell = row.createCell(5);
         cell.setCellValue(FieldC);
 
+        insertPicture();
 
         wb.write(fileOut);
         fileOut.close();
+    }
+
+    private void insertPicture() throws IOException {
+        InputStream inputStream = new FileInputStream("chart1.png");
+        byte[] bytes = IOUtils.toByteArray(inputStream);
+        int pictureIdx = wb.addPicture(bytes, Workbook.PICTURE_TYPE_PNG);
+        inputStream.close();
+        Drawing drawing = sheet.createDrawingPatriarch();
+        CreationHelper helper = wb.getCreationHelper();
+        ClientAnchor anchor = helper.createClientAnchor();
+        anchor.setCol1(8);
+        anchor.setRow1(2);
+        Picture pict = drawing.createPicture(anchor, pictureIdx);
+        pict.resize();
+
+
+        inputStream = new FileInputStream("chart2.png");
+        bytes = IOUtils.toByteArray(inputStream);
+        pictureIdx = wb.addPicture(bytes, Workbook.PICTURE_TYPE_PNG);
+        inputStream.close();
+        drawing = sheet.createDrawingPatriarch();
+        helper = wb.getCreationHelper();
+        anchor = helper.createClientAnchor();
+        anchor.setCol1(8);
+        anchor.setRow1(20);
+        pict = drawing.createPicture(anchor, pictureIdx);
+        pict.resize();
+
+
     }
 
     public void setNameFile(String nameFile) {

@@ -151,8 +151,7 @@ public class MainDialog extends JDialog {
             if ((double) fieldW.getValue() < 0) fieldW.setValue(Math.abs((double) fieldW.getValue()));
             if ((double) fieldH.getValue() < 0) fieldH.setValue(Math.abs((double) fieldL.getValue()));
             if ((double) fieldVu.getValue() < 0) fieldVu.setValue(Math.abs((double) fieldVu.getValue()));
-            if ((double) fieldTu.getValue() < 0)
-                fieldTu.setValue(Math.abs(Double.parseDouble((String) fieldTu.getValue())));
+            if ((double) fieldTu.getValue() < 0) fieldTu.setValue(Math.abs((double) fieldTu.getValue()));
             if ((double) fieldDeltaL.getValue() < 0) fieldDeltaL.setValue(Math.abs((Double) fieldDeltaL.getValue()));
         }
     }
@@ -167,12 +166,12 @@ public class MainDialog extends JDialog {
 
         setFormatField();
 
-        fieldL.setValue(new Double(10.6));
-        fieldW.setValue(new Double(0.27));
-        fieldH.setValue(new Double(0.05));
-        fieldVu.setValue(new Double(1.5));
-        fieldTu.setValue(new Double(210.0));
-        fieldDeltaL.setValue(new Double(0.1));
+        fieldL.setValue(10.6);
+        fieldW.setValue(0.27);
+        fieldH.setValue(0.05);
+        fieldVu.setValue(1.5);
+        fieldTu.setValue(210.1);
+        fieldDeltaL.setValue(0.1);
 
 
         ListenForFocus focusListenner = new ListenForFocus();

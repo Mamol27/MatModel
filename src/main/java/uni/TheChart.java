@@ -2,6 +2,7 @@ package uni;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.PlotOrientation;
@@ -16,7 +17,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -41,7 +44,8 @@ public class TheChart extends JPanel implements PlotterInterface {
     JPanel panelOfCharts = new JPanel();
     public String namefile;
     private ExtractExcel extractExcel;
-
+    JFreeChart chart2;
+    JFreeChart chart1;
 
 
 
@@ -62,6 +66,7 @@ public class TheChart extends JPanel implements PlotterInterface {
                         if (!namefile.endsWith(".xls")) {
                             namefile += ".xls";
                         }
+                        saveCharts();
                         extractExcel.setNameFile(namefile);
                         extractExcel.setTable(table);
                         extractExcel.createReport();
@@ -77,9 +82,9 @@ public class TheChart extends JPanel implements PlotterInterface {
         initFrame();
         createTable();
         createChart1();
-        createChart2();
-        add(panelOfCharts);
+//        add(panelOfCharts);
         add(saveReport);
+        createChart2();
 
 
     }
@@ -92,7 +97,7 @@ public class TheChart extends JPanel implements PlotterInterface {
 
         xyDataset1 = createDataset1("");
 
-        JFreeChart chart = ChartFactory.createXYLineChart(
+        chart1 = ChartFactory.createXYLineChart(
                 "Зависимость температуры от длины",                         // chart title	"Line Chart Demo 6"
                 "Длина, [м]",               // x axis label
                 "Температура, [°С]",        // y axis label
@@ -104,7 +109,7 @@ public class TheChart extends JPanel implements PlotterInterface {
         );
 
         // get a reference to the plot for further customisation...
-        plot = chart.getXYPlot();
+        plot = chart1.getXYPlot();
         plot.setBackgroundPaint(Color.white);
         plot.setDomainGridlinePaint(Color.lightGray);
         plot.setRangeGridlinePaint(Color.lightGray);
@@ -119,19 +124,19 @@ public class TheChart extends JPanel implements PlotterInterface {
         rangeAxis = (NumberAxis) plot.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
         // OPTIONAL CUSTOMISATION COMPLETED.
-        JPanel p = new JPanel();
 
-        chartPanel = new ChartPanel(chart);
+        chartPanel = new ChartPanel(chart1);
         chartPanel.setPreferredSize(new Dimension(600, 300));
-        panelOfCharts.setLayout(new GridLayout(2, 1));
-        panelOfCharts.add(chartPanel);
+//        panelOfCharts.setLayout(new GridLayout(2, 1));
+//        panelOfCharts.add(chartPanel);
+        add(chartPanel);
     }
 
     private void createChart2() {
         xyDataset2 = createDataset2("");
 
         // create the chart...
-        JFreeChart chart2 = ChartFactory.createXYLineChart(
+        chart2 = ChartFactory.createXYLineChart(
                 "Зависимость вязкости от длины",                         // chart title	"Line Chart Demo 6"
                 "Длина, [м]",               // x axis label
                 "Вязкость, [Па*с]",         // y axis label
@@ -161,7 +166,8 @@ public class TheChart extends JPanel implements PlotterInterface {
 
         chartPanel2 = new ChartPanel(chart2);
         chartPanel2.setPreferredSize(new Dimension(600, 300));
-        panelOfCharts.add(chartPanel2);
+//        panelOfCharts.add(chartPanel2);
+        add(chartPanel2);
     }
 
     private void createTable() {
@@ -289,6 +295,29 @@ public class TheChart extends JPanel implements PlotterInterface {
 
     public JTable getTable() {
         return table;
+    }
+
+    private void saveCharts() {
+        try {
+            // например в файл
+            OutputStream stream = new FileOutputStream("chart1.png");
+            ChartUtilities.writeChartAsPNG(stream, chart1, 500, 300);
+            stream.close();
+        } catch (IOException e) {
+            System.err.println("Failed to render chart as png: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+        try {
+            // например в файл
+            OutputStream stream = new FileOutputStream("chart2.png");
+            ChartUtilities.writeChartAsPNG(stream, chart2, 500, 300);
+            stream.close();
+        } catch (IOException e) {
+            System.err.println("Failed to render chart as png: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public void setExtractExcel(ExtractExcel extractExcel) {
