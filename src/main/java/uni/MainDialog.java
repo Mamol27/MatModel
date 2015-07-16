@@ -2,21 +2,17 @@ package uni;
 
 import dao.EcotmmDaoImpl;
 import dao.MaterialDaoImpl;
+import dao.UsersDao;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.Vector;
 
 public class MainDialog extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
     private TheTable theTable;
     private JTabbedPane tabs;
     private JFormattedTextField fieldW;
@@ -49,20 +45,30 @@ public class MainDialog extends JDialog {
     private JTextArea TextAreaTr;
     private JTextArea TextAreaN;
     private JButton calculateButton;
-    private JComboBox comboBox1;
+    private JComboBox<String> comboBox1;
     private JTextArea TextArea15;
     private JPanel tabPanel;
     private TheChart theChart;
+    private JTextArea timeArea;
     private Calculation calc;
+    UsersDao usersDao;
+    long msDelay;
 
 
     public MainDialog() {
         setContentPane(contentPane);
         setModal(true);
 
-        calculateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        calculateButton.addActionListener(e -> {
+            if ((double) fieldL.getValue() < 0.0 || (double) fieldW.getValue() < 0.0 ||
+                    (double) fieldH.getValue() < 0.0 || (double) fieldVu.getValue() < 0.0 ||
+                    (double) fieldTu.getValue() < 0.0 || (double) fieldDeltaL.getValue() < 0.0) {
+                JOptionPane.showMessageDialog(this,
+                        "Не должно быть отрицательных чисел\n" +
+                                "Проверьте введеные значения"
+                        , "Ошибка", JOptionPane.ERROR_MESSAGE);
+            } else {
+                Date currentTime = new Date();
                 calc.setW((Double) fieldW.getValue());
                 calc.setH((Double) fieldH.getValue());
                 calc.setL((Double) fieldL.getValue());
@@ -72,19 +78,19 @@ public class MainDialog extends JDialog {
                 calc.calculate();
                 setToExtractExcel();
 
-//                theChart.clearFunction();
+                theChart.clearFunction();
                 try {
-                    theChart.updateData(calc.getLayer(), calc.getH(), calc.getLayer(), calc.getT());
+                    theChart.updateData(calc.getLayer(), calc.getT(), calc.getLayer(), calc.getH());
                 } catch (ParseException e1) {
                     e1.printStackTrace();
                 }
                 theChart.updateTable();
-//                theChart.showPlotter();
-
+                msDelay = theChart.getNewTime().getTime() - currentTime.getTime();
+                timeArea.setText("Готово! Результат посчитан за " + msDelay + " мс");
             }
+
         });
     }
-
 
     public static void main(String[] args) {
         MainDialog dialog = new MainDialog();
@@ -97,10 +103,8 @@ public class MainDialog extends JDialog {
         MaterialDaoImpl materialDao = new MaterialDaoImpl();
         EcotmmDaoImpl ecotmmDao = new EcotmmDaoImpl();
 
-        comboBox1 = new JComboBox();
-        for (String item : materialDao.getColumn()) {
-            comboBox1.addItem(item);
-        }
+        comboBox1 = new JComboBox<String>();
+        materialDao.getColumn().forEach(comboBox1::addItem);
 
 
         int box_id = (int) theTable.defaultTableModel.getValueAt(comboBox1.getSelectedIndex(), 0);
@@ -117,52 +121,29 @@ public class MainDialog extends JDialog {
         fieldN.setValue(ecotmm.get(3));
         fieldAlfau.setValue(ecotmm.get(4));
 
-        comboBox1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MaterialDaoImpl materialDao = new MaterialDaoImpl();
-                EcotmmDaoImpl ecotmmDao = new EcotmmDaoImpl();
+        comboBox1.addActionListener(e -> {
+            MaterialDaoImpl materialDao1 = new MaterialDaoImpl();
+            EcotmmDaoImpl ecotmmDao1 = new EcotmmDaoImpl();
 
-                JComboBox box = (JComboBox) e.getSource();
-                int box_id = (int) theTable.defaultTableModel.getValueAt(box.getSelectedIndex(), 0);
-                Vector<Object> materials = materialDao.get(box_id);
-                Vector<Object> ecotmm = ecotmmDao.get(box_id);
-                calc = new Calculation(materials.get(2), materials.get(3), materials.get(4),
-                        ecotmm.get(0), ecotmm.get(1), ecotmm.get(2), ecotmm.get(3), ecotmm.get(4));
-                fieldRo.setValue(materials.get(2));
-                fieldC.setValue(materials.get(3));
-                fieldT0.setValue(materials.get(4));
-                fieldMu0.setValue(ecotmm.get(0));
-                fieldB.setValue(ecotmm.get(1));
-                fieldTr.setValue(ecotmm.get(2));
-                fieldN.setValue(ecotmm.get(3));
-                fieldAlfau.setValue(ecotmm.get(4));
-            }
+            JComboBox box = (JComboBox) e.getSource();
+            int box_id1 = (int) theTable.defaultTableModel.getValueAt(box.getSelectedIndex(), 0);
+            Vector<Object> materials1 = materialDao1.get(box_id1);
+            Vector<Object> ecotmm1 = ecotmmDao1.get(box_id1);
+            calc = new Calculation(materials1.get(2), materials1.get(3), materials1.get(4),
+                    ecotmm1.get(0), ecotmm1.get(1), ecotmm1.get(2), ecotmm1.get(3), ecotmm1.get(4));
+            fieldRo.setValue(materials1.get(2));
+            fieldC.setValue(materials1.get(3));
+            fieldT0.setValue(materials1.get(4));
+            fieldMu0.setValue(ecotmm1.get(0));
+            fieldB.setValue(ecotmm1.get(1));
+            fieldTr.setValue(ecotmm1.get(2));
+            fieldN.setValue(ecotmm1.get(3));
+            fieldAlfau.setValue(ecotmm1.get(4));
         });
 
     }
 
-    private class ListenForFocus implements FocusListener {
-        public void focusGained(FocusEvent e) {
-        }
-
-        public void focusLost(FocusEvent e) {
-            if ((double) fieldL.getValue() < 0.0) fieldL.setValue(Math.abs((double) fieldL.getValue()));
-            if ((double) fieldW.getValue() < 0) fieldW.setValue(Math.abs((double) fieldW.getValue()));
-            if ((double) fieldH.getValue() < 0) fieldH.setValue(Math.abs((double) fieldL.getValue()));
-            if ((double) fieldVu.getValue() < 0) fieldVu.setValue(Math.abs((double) fieldVu.getValue()));
-            if ((double) fieldTu.getValue() < 0) fieldTu.setValue(Math.abs((double) fieldTu.getValue()));
-            if ((double) fieldDeltaL.getValue() < 0) fieldDeltaL.setValue(Math.abs((Double) fieldDeltaL.getValue()));
-        }
-    }
-
-
     private void createUIComponents() throws SQLException {
-
-
-        theTable = new TheTable();
-        theTable.setColumnWidths(theTable.columns, 100, 250, 150, 180, 180, 180, 150, 150, 150, 150, 150);
-        theTable.setSize(900, 500);
 
         setFormatField();
 
@@ -173,23 +154,19 @@ public class MainDialog extends JDialog {
         fieldTu.setValue(210.1);
         fieldDeltaL.setValue(0.1);
 
+        if (usersDao == null)
+            usersDao = new UsersDao(this);
+        usersDao.setVisible(true);
 
-        ListenForFocus focusListenner = new ListenForFocus();
-        fieldL.addFocusListener(focusListenner);
-        fieldW.addFocusListener(focusListenner);
-        fieldH.addFocusListener(focusListenner);
-        fieldVu.addFocusListener(focusListenner);
-        fieldTu.addFocusListener(focusListenner);
-        fieldDeltaL.addFocusListener(focusListenner);
+        theTable = new TheTable(usersDao);
+        theTable.setColumnWidths(theTable.columns, 100, 250, 150, 180, 180, 180, 150, 150, 150, 150, 150);
+        theTable.setSize(900, 500);
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    fillComboBox();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+        SwingUtilities.invokeLater(() -> {
+            try {
+                fillComboBox();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         });
     }
@@ -254,5 +231,6 @@ public class MainDialog extends JDialog {
         extractExcel.setFieldAlfau((Double) fieldAlfau.getValue());
 
     }
+
 
 }

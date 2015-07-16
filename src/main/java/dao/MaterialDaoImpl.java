@@ -9,9 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-/**
- * Created by Илья on 25.05.2015.
- */
+
 public class MaterialDaoImpl implements MaterialDao {
     @Override
     public Vector<Vector<Object>> get() {
@@ -101,7 +99,7 @@ public class MaterialDaoImpl implements MaterialDao {
 
     public Vector<String> getColumn() throws SQLException {
         Connection connection = DbConnection.createConnection();
-        String sql = "SELECT material_id, type, density, ash, melting_point, description  FROM materials;";
+        String sql = "SELECT type FROM materials;";
         Statement st = connection.createStatement();
         ResultSet resultSet = st.executeQuery(sql);
         Vector<String> mat = new Vector<>();

@@ -1,8 +1,6 @@
 package model;
 
-/**
- * Created by Илья on 25.05.2015.
- */
+
 public class Material {
     int id;
     String type;

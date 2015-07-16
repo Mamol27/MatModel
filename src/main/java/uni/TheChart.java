@@ -25,6 +25,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Vector;
 
@@ -39,14 +40,17 @@ public class TheChart extends JPanel implements PlotterInterface {
     private XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
     private Vector<Double> L = new Vector<>();
     private Vector<Double> T = new Vector<>();
-    private Vector<Double> H = new Vector<>();
+    private Vector<Long> H = new Vector<>();
     JTable table = new JTable();
-    JPanel panelOfCharts = new JPanel();
+    JPanel panelOfCharts = new JPanel(new GridLayout(2, 1));
+    GridBagLayout gbl = new GridBagLayout();
+    JPanel panelTable = new JPanel(gbl);
+    GridBagConstraints c = new GridBagConstraints();
     public String namefile;
     private ExtractExcel extractExcel;
     JFreeChart chart2;
     JFreeChart chart1;
-
+    Date newTime;
 
 
     public TheChart() {
@@ -81,20 +85,22 @@ public class TheChart extends JPanel implements PlotterInterface {
 
         initFrame();
         createTable();
+        c.gridy = 1;
+        c.anchor = GridBagConstraints.CENTER;
+        panelTable.add(saveReport, c);
         createChart1();
-//        add(panelOfCharts);
-        add(saveReport);
         createChart2();
 
-
+        add("West", panelTable);
+        add("Center", panelOfCharts);
     }
 
     private void initFrame() {
-        this.setLayout(new GridLayout(2, 3));
+        this.setLayout(new FlowLayout(FlowLayout.LEFT));
+
     }
 
     private void createChart1() {
-
         xyDataset1 = createDataset1("");
 
         chart1 = ChartFactory.createXYLineChart(
@@ -108,34 +114,27 @@ public class TheChart extends JPanel implements PlotterInterface {
                 false                       // urls
         );
 
-        // get a reference to the plot for further customisation...
         plot = chart1.getXYPlot();
         plot.setBackgroundPaint(Color.white);
         plot.setDomainGridlinePaint(Color.lightGray);
         plot.setRangeGridlinePaint(Color.lightGray);
-        plot.setWeight(500);
 
         renderer.setSeriesShapesVisible(0, false);    // a thin line will be painted for series1
 //        renderer.setSeriesShapesVisible(1, false);    // points will be painted for series2
 
         plot.setRenderer(renderer);
 
-        // change the auto tick unit selection to integer units only...
         rangeAxis = (NumberAxis) plot.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-        // OPTIONAL CUSTOMISATION COMPLETED.
 
         chartPanel = new ChartPanel(chart1);
-        chartPanel.setPreferredSize(new Dimension(600, 300));
-//        panelOfCharts.setLayout(new GridLayout(2, 1));
-//        panelOfCharts.add(chartPanel);
-        add(chartPanel);
+        chartPanel.setPreferredSize(new Dimension(600, 250));
+        panelOfCharts.add(chartPanel);
     }
 
     private void createChart2() {
         xyDataset2 = createDataset2("");
 
-        // create the chart...
         chart2 = ChartFactory.createXYLineChart(
                 "Зависимость вязкости от длины",                         // chart title	"Line Chart Demo 6"
                 "Длина, [м]",               // x axis label
@@ -147,27 +146,22 @@ public class TheChart extends JPanel implements PlotterInterface {
                 false                       // urls
         );
 
-        // get a reference to the plot for further customisation...
         plot2 = chart2.getXYPlot();
         plot2.setBackgroundPaint(Color.white);
         plot2.setDomainGridlinePaint(Color.lightGray);
         plot2.setRangeGridlinePaint(Color.lightGray);
 
-
-//        renderer.setSeriesShapesVisible(0, false);    // a thin line will be painted for series1
-        renderer.setSeriesShapesVisible(1, false);    // points will be painted for series2
+        renderer.setSeriesShapesVisible(0, false);    // a thin line will be painted for series1
+//        renderer.setSeriesShapesVisible(1, false);    // points will be painted for series2
 
         plot2.setRenderer(renderer);
 
-        // change the auto tick unit selection to integer units only...
         rangeAxis = (NumberAxis) plot2.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-        // OPTIONAL CUSTOMISATION COMPLETED.
 
         chartPanel2 = new ChartPanel(chart2);
-        chartPanel2.setPreferredSize(new Dimension(600, 300));
-//        panelOfCharts.add(chartPanel2);
-        add(chartPanel2);
+        chartPanel2.setPreferredSize(new Dimension(600, 250));
+        panelOfCharts.add(chartPanel2);
     }
 
     private void createTable() {
@@ -181,8 +175,21 @@ public class TheChart extends JPanel implements PlotterInterface {
         table.setRowHeight(table.getRowHeight() + 4);
         table.setAutoCreateRowSorter(true);
         JScrollPane scrollPane = new JScrollPane(table);
-//        font = new Font("Serif", Font.PLAIN, 18);
-        add(scrollPane);
+        scrollPane.setPreferredSize(new Dimension(300, 480));
+
+        c.anchor = GridBagConstraints.WEST;
+        c.fill = GridBagConstraints.VERTICAL;
+        c.gridheight = 1;
+        c.gridwidth = GridBagConstraints.REMAINDER;
+        c.gridx = 0;
+        c.gridy = 0;
+        c.insets = new Insets(0, 40, 0, 100);
+        c.ipadx = 0;
+        c.ipady = 0;
+        c.weightx = 1.0;
+        c.weighty = 0.0;
+
+        panelTable.add(scrollPane, c);
     }
 
     @Override
@@ -197,6 +204,8 @@ public class TheChart extends JPanel implements PlotterInterface {
         L.clear();
         H.clear();
         T.clear();
+        newTime = new Date();
+
     }
 
     private XYSeriesCollection createDataset1(String legendTxt) {
@@ -224,21 +233,20 @@ public class TheChart extends JPanel implements PlotterInterface {
     @Override
     public void updateData(Vector<Double> x, Vector<Double> y, Vector<Double> marksX, Vector<Double> marksY) throws ParseException {
 
-        DecimalFormat df = new DecimalFormat("#.###");
+        DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.HALF_DOWN);
+
+        NumberFormat formatter = NumberFormat.getInstance();
+        formatter.setMinimumIntegerDigits(1);
 
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.getDefault());
         NumberFormat nf = NumberFormat.getInstance();
 
         for (int i = 0; i < x.size(); i++) {
             L.add(nf.parse(df.format(x.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
-            H.add(nf.parse(df.format(y.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
-            T.add(nf.parse(df.format(marksY.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
+            H.add(nf.parse(formatter.format(marksY.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).longValue());
+            T.add(nf.parse(df.format(y.get(i)).replaceAll("[,.]", String.valueOf(symbols.getDecimalSeparator()))).doubleValue());
         }
-
-//        L = x;
-//        H = y;
-//        T = marksY;
 
         XYSeries series1 = new XYSeries("Вязкость, [Па*с]");
         XYSeries series2 = new XYSeries("Температура, [°С]");
@@ -318,6 +326,10 @@ public class TheChart extends JPanel implements PlotterInterface {
             System.err.println("Failed to render chart as png: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    public Date getNewTime() {
+        return newTime;
     }
 
     public void setExtractExcel(ExtractExcel extractExcel) {

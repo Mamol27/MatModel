@@ -9,9 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-/**
- * Created by Илья on 26.05.2015.
- */
+
 public class EcotmmDaoImpl implements EcotmmDao {
 
 

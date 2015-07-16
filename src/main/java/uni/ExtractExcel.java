@@ -12,9 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by Илья on 08.06.2015.
- */
+
 public class ExtractExcel {
     String nameFile = null;
     TheChart theChart;
@@ -85,7 +83,7 @@ public class ExtractExcel {
             cell = row.createCell(0);
             cell.setCellValue((Double) table.getValueAt(i, 0));
             cell = row.createCell(1);
-            cell.setCellValue((Double) table.getValueAt(i, 1));
+            cell.setCellValue((Long) table.getValueAt(i, 1));
             cell = row.createCell(2);
             cell.setCellValue((Double) table.getValueAt(i, 2));
         }
@@ -152,8 +150,8 @@ public class ExtractExcel {
         Drawing drawing = sheet.createDrawingPatriarch();
         CreationHelper helper = wb.getCreationHelper();
         ClientAnchor anchor = helper.createClientAnchor();
-        anchor.setCol1(8);
-        anchor.setRow1(2);
+        anchor.setCol1(4);
+        anchor.setRow1(12);
         Picture pict = drawing.createPicture(anchor, pictureIdx);
         pict.resize();
 
@@ -165,8 +163,8 @@ public class ExtractExcel {
         drawing = sheet.createDrawingPatriarch();
         helper = wb.getCreationHelper();
         anchor = helper.createClientAnchor();
-        anchor.setCol1(8);
-        anchor.setRow1(20);
+        anchor.setCol1(4);
+        anchor.setRow1(30);
         pict = drawing.createPicture(anchor, pictureIdx);
         pict.resize();
 

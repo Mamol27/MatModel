@@ -2,6 +2,7 @@ package uni;
 
 import dao.EcotmmDaoImpl;
 import dao.MaterialDaoImpl;
+import dao.UsersDao;
 import model.Ecotmm;
 import model.Material;
 
@@ -15,9 +16,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 
-/**
- * Created by Илья on 13.05.2015.
- */
+
 public class TheTable extends JPanel {
     JTable table;
     Font font;
@@ -28,6 +27,8 @@ public class TheTable extends JPanel {
     public DefaultTableModel defaultTableModel;
     private Object[][] databaseResults;
     public Object[] columns;
+    private boolean isAdmin = false;
+    UsersDao users;
 
 
     private class ListenForAction implements ActionListener { // Слушаем кнопки
@@ -65,19 +66,13 @@ public class TheTable extends JPanel {
     private class ListenForMouse extends MouseAdapter {
         public void mouseReleased(MouseEvent mouseEvent) {
             // If the mouse is released and the click was a right click
-            if (SwingUtilities.isRightMouseButton(mouseEvent)) {
+            if (SwingUtilities.isRightMouseButton(mouseEvent) && isAdmin) {
                 // Create a dialog for the user to enter new data
                 String value = JOptionPane.showInputDialog(null, "Введи новое значение:");
                 if (value != null) { // If they entered info, update the database
                     table.setValueAt(value, table.getSelectedRow(), table.getSelectedColumn());
                     String updateColumn;
-
-                    // Go to the row in the db
-//                        MainDialog.db.res1.absolute(table.getSelectedRow() + 1);
                     updateColumn = defaultTableModel.getColumnName(table.getSelectedColumn());
-//                        MainDialog.db.res1.updateString(updateColumn, value);
-//                        MainDialog.db.res1.updateRow();
-//                        }
                 }
             }
         }
@@ -97,15 +92,15 @@ public class TheTable extends JPanel {
                 tfDescription.setText("");
             } else if (tfType.getText().equals("Название") && e.getSource() == tfType) {
                 tfType.setText("");
-            } else if (tfMu0.getText().equals("Коэффициэет консистениции") && e.getSource() == tfMu0) {
+            } else if (tfMu0.getText().equals("Коэффициент консистениции") && e.getSource() == tfMu0) {
                 tfMu0.setText("");
-            } else if (tfB.getText().equals("Коэффициэнт вязкости") && e.getSource() == tfB) {
+            } else if (tfB.getText().equals("Коэффициент вязкости") && e.getSource() == tfB) {
                 tfB.setText("");
             } else if (tfTr.getText().equals("Т приведения") && e.getSource() == tfTr) {
                 tfTr.setText("");
             } else if (tfN.getText().equals("Индекс Течения") && e.getSource() == tfN) {
                 tfN.setText("");
-            } else if (tfAlfau.getText().equals("Коэффициэнт теплоотдачи от крышки") && e.getSource() == tfAlfau) {
+            } else if (tfAlfau.getText().equals("Коэффициент теплоотдачи от крышки") && e.getSource() == tfAlfau) {
                 tfAlfau.setText("");
             }
         }
@@ -137,8 +132,9 @@ public class TheTable extends JPanel {
         }
     }
 
-    public TheTable() throws SQLException {
+    public TheTable(UsersDao users) throws SQLException {
         super();
+        isAdmin = users.isAdmin;
         createTable();
         table = new JTable(defaultTableModel);
         font = new Font("Serif", Font.PLAIN, 18);
@@ -153,7 +149,7 @@ public class TheTable extends JPanel {
 
         // Create a JScrollPane and add it to the center of the window
         JScrollPane scrollPane = new JScrollPane(table);
-        this.add(scrollPane);
+        this.add(scrollPane, BorderLayout.NORTH);
         scrollPane.setMinimumSize(new Dimension(800, 300));
         scrollPane.setMaximumSize(new Dimension(1000, 300));
         scrollPane.setPreferredSize(new Dimension(900, 300));
@@ -214,6 +210,9 @@ public class TheTable extends JPanel {
         errorMessage.setForeground(Color.red);
         JPanel errorPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         errorPanel.add(errorMessage);
+
+        inputPanel.setVisible(isAdmin);
+        inputPanel2.setVisible(isAdmin);
 
         add(inputPanel, BorderLayout.SOUTH);
         add(inputPanel2, BorderLayout.SOUTH);

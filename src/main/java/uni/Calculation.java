@@ -2,9 +2,7 @@ package uni;
 
 import java.util.Vector;
 
-/**
- * Created by Илья on 01.05.2015.
- */
+
 public class Calculation {
 
     private double H;                    //глубина канала, м;
@@ -48,6 +46,9 @@ public class Calculation {
     }
 
     public void calculate() {
+        T.clear();
+        h.clear();
+        layer.clear();
 
         F = 0.125 * Math.pow(H / W, 2) - 0.625 * Math.pow(H / W, 2) + 1;
         gamma = Vu / H;
